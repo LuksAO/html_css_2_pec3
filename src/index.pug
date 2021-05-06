@@ -1,0 +1,33 @@
+extends layouts/base 
+
+append variables 
+  - var title = '80teros';
+  - var background = 'bg-guitars';
+  - var currentPage = 'Home';
+
+block main 
+
+  .grid.grid-cols-6.justify-center.gap-10.max-w-screen-lg.mx-auto
+    .col-span-6(class="md:col-span-3 md:col-start-2")
+      h1.font-bungee.text-6xl.index-title.text-center(class="sm:text-8xl").
+        We love 80's songs
+
+    .col-span-6(class="md:col-span-2")
+      .index-text-block.glass.p-4
+        section
+          h2.font-fugaz.text-4xl.
+            Somos los
+            #[span.text-purple.text-5xl 80teros]!
+
+          p.m-0.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi et eveniet nesciunt est explicabo id quasi minus ipsa doloribus alias? Harum voluptate est non hic officia laudantium repellendus asperiores maxime soluta sunt voluptatibus, blanditiis numquam nulla aspernatur id, aut corrupti?
+
+    .col-span-6(class="md:col-span-5 md:col-start-2")
+      .index-button.text-center
+        a.glass.plain-shadow.inline-block.border-black.border-2.font-medium(
+          role="button", href="songs.pug",
+          class="hover:bg-purple hover:text-white p-2"
+        ).
+          Ver nuestro repertorio de canciones
+
+      

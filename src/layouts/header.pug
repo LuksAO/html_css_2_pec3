@@ -1,0 +1,16 @@
+
+nav.py-lg-3.glass.font-medium
+  div.max-w-screen-lg.mx-auto
+    include logo 
+
+    button.btn.d-lg-none(type="button", data-toggle="collapse", data-target="#navbarNavAltMarkup", aria-controls="navbarNavAltMarkup", aria-expanded="false", aria-label="Toggle navigation")
+      span.navbar-toggler-icon
+
+    .collapse.navbar-collapse.justify-content-end#navbarNavAltMarkup
+      .navbar-nav.list-none
+        each link in pageLinks.slice(1, pageLinks.length)
+          - var isActive = currentPage === link.name
+          li.nav-item(class="hover:text-purple")
+            a.nav-link(href=link.href class={ "text-purple": isActive })= link.name
+            if isActive
+              span.sr-only (actual)

@@ -1,0 +1,25 @@
+block variables
+//title, background, currentPage
+
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    link(rel="stylesheet", type="text/css", href="./assets/styles/main.scss")
+    link(rel="preconnect", href="https://fonts.gstatic.com")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fugaz+One&display=swap")
+
+    title= title
+  body.bg-cover(class=background)
+    div.flex.min-h-screen.flex-col
+      include header
+
+      div.flex-grow
+        block main
+
+      include footer
+      
+    script(src="./assets/scripts/main.js")

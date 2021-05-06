@@ -1,0 +1,22 @@
+footer.mt-5.glass.font-medium
+  nav.flex.justify-between.p-4.flex-col.items-center.space-y-3.max-w-screen-lg.mx-auto(class="md:space-x-20 md:flex-row")
+    include logo 
+
+    ul.flex.justify-between.flex-grow.space-x-3
+      each link in pageLinks
+        - var isActive = currentPage === link.name
+        li.nav-item(class="hover:text-purple")
+          a.nav-link(href=link.href class={ "text-purple": isActive })= link.name
+          if isActive
+            span.sr-only (actual)
+
+    ul.flex(class="space-x-2.5")
+      li.nav-item(class="hover:text-purple")
+        a.nav-link(href="#", aria-label="Google Plus")
+          i.fab.fa-google-plus-g.fa-2x
+      li.nav-item(class="hover:text-purple")
+        a.nav-link(href="#", aria-label="Facebook")
+          i.fab.fa-facebook-square.fa-2x
+      li.nav-item(class="hover:text-purple")
+        a.nav-link(href="#", aria-label="Twitter")
+          i.fab.fa-twitter.fa-2x

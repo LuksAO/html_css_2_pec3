@@ -1,0 +1,21 @@
+@layer utilities {
+  .glass {
+    background-color: #f6f6f6;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  @supports (backdrop-filter: blur(10px)) {
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  .plain-shadow {
+    box-shadow: 5px 5px 0 black;
+  }
+
+  .plain-shadow-purple {
+    box-shadow: 5px 5px 0 theme('colors.purple');
+  }
+}

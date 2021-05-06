@@ -1,0 +1,58 @@
+extends layouts/base
+
+append variables 
+  - var currentPage = 'Canciones'
+  - var title = 'Canciones | 80teros'
+  - 
+    var songs = [
+      {
+        title: 'The Chain',
+        author: 'Fleetwood Mac',
+        img: './assets/images/s2.jpg',
+        yt: 'https://www.youtube.com/watch?v=JDG2m5hN1vo'
+      },
+      {
+        title: 'I Want You Back',
+        author: 'The Jackson 5',
+        img: './assets/images/s4.jpg',
+        yt: 'https://www.youtube.com/watch?v=s3Q80mk7bxE'
+      },
+      {
+        title: 'Never Gonna Give You ',
+        author: 'Rick Astley',
+        img: './assets/images/s3.jpg',
+        yt: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+      },
+      {
+        title: 'Take On Me',
+        author: 'a-ha',
+        img: './assets/images/s1.jpg',
+        yt: 'https://www.youtube.com/watch?v=djV11Xbc914'
+      },
+      {
+        title: 'Happy Together',
+        author: 'The Turtles',
+        img: './assets/images/s5.jpg',
+        yt: 'https://www.youtube.com/watch?v=9ZEURntrQOg'
+      },
+      {
+        title: 'Under Pressure',
+        author: 'Queen',
+        img: './assets/images/s6.jpg',
+        yt: 'https://www.youtube.com/watch?v=a01QQZyl-_I'
+      }
+    ]
+
+block main 
+  h1.text-4xl.font-fugaz.text-center.mt-5 Nuestro repertorio de #[span.text-purple canciones]
+
+  .grid.grid-cols-2.gap-5.mx-auto.p-5(class="lg:max-w-screen-lg")
+    each song in songs 
+      .col-span-2.flex.align-center.bg-white.border-black.border-2.plain-shadow-purple.space-x-5.pr-3(class="md:col-span-1")
+        img(src=song.img class="w-4/12 .h-28 object-cover hidden sm:block")
+        div.flex.flex-col.justify-center.flex-grow.my-5
+          .font-medium.text-xl= song.title
+          .italic= song.author 
+        div.flex.flex-col.justify-center.my-5
+          a(href=song.yt, target="_blank", aria-label="Ver en Youtube" class="hover:text-red-500")
+            i.fab.fa-youtube.fa-2x
