@@ -1,6 +1,5 @@
 module.exports = {
   locals: {
-    hello: "world",
     pageLinks: [
       {
         name: 'Home',
